@@ -23,7 +23,7 @@ function removeTodo(todo) {
   </form>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      {{ todo.text }}
+      {{ todo.id }} {{ todo.text }}
       <button @click="removeTodo(todo)" style="background-color: transparent; border-color: transparent; color: red; cursor: pointer;">X</button>
     </li>
   </ul>
