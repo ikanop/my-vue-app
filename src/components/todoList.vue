@@ -19,12 +19,12 @@ function removeTodo(todo) {
 <template>
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="New todo" />
-    <button>Add</button>
+    <button style="cursor: pointer;">Add</button>
   </form>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
       {{ todo.text }}
-      <button @click="removeTodo(todo)">X</button>
+      <button @click="removeTodo(todo)" style="background-color: transparent; border-color: transparent; color: red; cursor: pointer;">X</button>
     </li>
   </ul>
 </template>
