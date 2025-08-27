@@ -7,8 +7,8 @@ import TodoList from "../components/todoList.vue";
 
 <template>
   <Languages />
-  <switch />
-  <todo-list />
+  <Switch />
+  <TodoList />
 </template>
 
 <style scoped>

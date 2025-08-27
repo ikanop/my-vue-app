@@ -12,3 +12,13 @@
     <RouterView/>
   </main>
 </template>
+
+<style scoped>
+nav {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+</style>
