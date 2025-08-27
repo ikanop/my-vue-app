@@ -19,13 +19,15 @@ function removeTodo(todo) {
 
 <template>
   <form @submit.prevent="addTodo">
-    <input v-model="newTodo" required placeholder="New todo"
-           style="
-           margin-top: 20px;"
+    <input v-model="newTodo" required placeholder="New todo">
+    <button
+        style="
+        cursor: pointer;"
     >
-    <button style="cursor: pointer;">Add</button>
+      Add
+    </button>
   </form>
-  <ul v-for="todo in todos" :key="todo.id">
+  <p v-for="todo in todos" :key="todo.id">
     {{ todo.id }} {{ todo.text }}
     <button
         @click="removeTodo(todo)"
@@ -37,11 +39,11 @@ function removeTodo(todo) {
     >
       X
     </button>
-  </ul>
+  </p>
   <button @click="hideCompleted = !hideCompleted"
           style="
           cursor: pointer;
-          margin-top: 20px"
+          margin-top: 20px;"
   >
     {{ hideCompleted ? 'Show all' : 'Hide all' }}
   </button>
