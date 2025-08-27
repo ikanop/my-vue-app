@@ -9,7 +9,7 @@ function toggle() {
 </script>
 
 <template>
-  <button @click="toggle" style="cursor: pointer; margin-top: 20px;">Toggle</button>
+  <button @click="toggle" style="cursor: pointer; margin-top: 20px">Toggle</button>
   <h3 v-if="isFish">Fish</h3>
   <h3 v-else>PufferFish</h3>
 </template>

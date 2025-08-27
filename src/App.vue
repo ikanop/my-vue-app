@@ -1,13 +1,14 @@
 <script setup>
-import Languages from './components/languages.vue'
-import Switch from './components/switch.vue'
-import TodoList from './components/todoList.vue'
+
 </script>
 
 <template>
+  <h1>Hello World!</h1>
+  <nav>
+    <RouterLink to ="/">Main</RouterLink>
+    <RouterLink to ="/Secondary">Secondary</RouterLink>
+  </nav>
   <main>
-    <Languages />
-    <Switch />
-    <TodoList />
+    <RouterView/>
   </main>
 </template>
