@@ -5,7 +5,21 @@ let id = 0
 
 const newTodo = ref('')
 const hideCompleted = ref(false)
-const todos = ref([])
+const todos = ref([
+  { id: id++, text: 'Learn HTML', done: true },
+  { id: id++, text: 'Learn CSS', done: true },
+  { id: id++, text: 'Learn BASH', done: true },
+  { id: id++, text: 'Learn JavaScript', done: false },
+  { id: id++, text: 'Learn Vue', done: false }
+])
+
+const filterTodos = computed(() => {
+  if (hideCompleted.value) {
+    return todos.value.filter((t) => !t.done)
+  } else {
+    return todos.value
+  }
+})
 
 function addTodo() {
   todos.value.push({ id: id++, text: newTodo.value, done: false })
@@ -19,32 +33,40 @@ function removeTodo(todo) {
 
 <template>
   <form @submit.prevent="addTodo">
-    <input v-model="newTodo" required placeholder="New todo">
-    <button
-        style="
-        cursor: pointer;"
-    >
-      Add
-    </button>
+    <input v-model="newTodo" required placeholder="new todo">
+    <button>Add Todo</button>
   </form>
-  <p v-for="todo in todos" :key="todo.id">
-    {{ todo.id }} {{ todo.text }}
-    <button
-        @click="removeTodo(todo)"
-        style="
-          background-color: transparent;
-          border-color: transparent;
-          color: red;
-          cursor: pointer;"
+  <p v-for="todo in filterTodos" :key="todo.id">
+    <input type="checkbox" v-model="todo.done"
+           style="
+           cursor: pointer"
+    />
+    <span :class="{ done: todo.done }" class="todo-text">{{ todo.text }}</span>
+    <button @click="removeTodo(todo)"
+            style="
+            color: red;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;"
     >
       X
     </button>
   </p>
   <button @click="hideCompleted = !hideCompleted"
           style="
-          cursor: pointer;
           margin-top: 20px;"
   >
-    {{ hideCompleted ? 'Show all' : 'Hide all' }}
+    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
   </button>
 </template>
+
+<style>
+.done {
+  text-decoration: line-through;
+}
+
+.todo-text {
+  display: inline-block;
+  width: 200px;
+}
+</style>
