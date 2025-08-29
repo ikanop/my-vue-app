@@ -1,21 +1,39 @@
 <script setup>
 import { ref } from 'vue'
 
-const isFish = ref(false)
+const Switch = ref(false)
 
 function toggle() {
-  isFish.value = !isFish.value
+  Switch.value = !Switch.value
 }
 </script>
 
 <template>
-  <button @click="toggle"
-          style="
-          cursor: pointer;
-          margin-top: 20px"
-  >
-    Toggle
-  </button>
-  <h3 v-if="isFish">Fish</h3>
-  <h3 v-else>PufferFish</h3>
+  <div class="switch-container">
+    <button @click="toggle" :class="Switch ? 'green' : 'red'"
+
+            style="
+            cursor: pointer;"
+    >
+      {{Switch ? 'True' : 'False'}}
+    </button>
+    <h3 :class="Switch ? 'green' : 'red'">
+      {{Switch ? 'Fish' : 'PufferFish'}}</h3>
+  </div>
 </template>
+
+<style scoped>
+.switch-container {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+</style>

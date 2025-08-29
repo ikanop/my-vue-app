@@ -32,41 +32,65 @@ function removeTodo(todo) {
 </script>
 
 <template>
-  <form @submit.prevent="addTodo">
-    <input v-model="newTodo" required placeholder="new todo">
-    <button>Add Todo</button>
-  </form>
-  <p v-for="todo in filterTodos" :key="todo.id">
-    <input type="checkbox" v-model="todo.done"
-           style="
-           cursor: pointer"
-    />
-    <span :class="{ done: todo.done }" class="todo-text">{{ todo.text }}</span>
-    <button @click="removeTodo(todo)"
+  <div class="todo-container">
+    <form @submit.prevent="addTodo">
+      <input v-model="newTodo" required placeholder="new todo" maxlength="20">
+      <button>Add Todo</button>
+    </form>
+      <div class="todo-list-container">
+        <p v-for="todo in filterTodos" :key="todo.id">
+          <input type="checkbox" v-model="todo.done"
+                 style="
+                 cursor: pointer"
+          />
+          <span :class="{ done: todo.done }" class="todo-text">{{ todo.text }}</span>
+          <button @click="removeTodo(todo)" class="remove-button">X</button>
+        </p>
+    </div>
+    <button @click="hideCompleted = !hideCompleted"
             style="
-            color: red;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;"
+              margin-top: 20px;"
     >
-      X
+      {{ hideCompleted ? 'Show all' : 'Hide completed' }}
     </button>
-  </p>
-  <button @click="hideCompleted = !hideCompleted"
-          style="
-          margin-top: 20px;"
-  >
-    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
-  </button>
+  </div>
 </template>
 
 <style>
-.done {
-  text-decoration: line-through;
+.todo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list-container {
+  max-height: 200px;
+  width: fit-content;
+  overflow-y: auto;
+}
+
+.todo-list-container::-webkit-scrollbar{
+  background: transparent;
+  width: 10px;
+}
+
+.todo-list-container::-webkit-scrollbar-thumb{
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
 }
 
 .todo-text {
   display: inline-block;
   width: 200px;
+}
+
+.remove-button {
+  color: red;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
 }
 </style>

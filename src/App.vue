@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <header>
+    <h1>Global Header!!</h1>
+  </header>
   <nav>
     <RouterLink to ="/">Main</RouterLink>
     <RouterLink to ="/Secondary">Secondary</RouterLink>
