@@ -7,5 +7,4 @@ import Languages from "../components/languages.vue";
 </template>
 
 <style scoped>
-
 </style>

@@ -20,7 +20,6 @@ onMounted(async () => {
 
 <template>
   <div>
-    <h2>Languages used in this repo</h2>
     <div v-for="(percent, lang) in percentages" :key="lang" class="language">
       <p>{{ lang }} - {{ percent }}%</p>
       <div class="bar">
