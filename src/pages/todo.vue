@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Switch from "../components/switch.vue";
 import TodoList from "../components/todoList.vue";
 import MountedStatus from "../components/mountedStatus.vue";
 </script>
@@ -7,7 +6,6 @@ import MountedStatus from "../components/mountedStatus.vue";
 <template>
   <div class="container">
     <TodoList/>
-    <Switch/>
     <MountedStatus
         style="
         margin: 0 0 0 auto;"

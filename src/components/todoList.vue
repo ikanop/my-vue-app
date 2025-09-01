@@ -84,7 +84,7 @@ function removeTodo(todo) {
 }
 
 .remove-button {
-  color: red;
+  color: var(--text-color);
   background-color: transparent;
   border: none;
   cursor: pointer;

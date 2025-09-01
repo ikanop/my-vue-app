@@ -6,44 +6,48 @@
       <RouterLink to ="/"
       :class="{ active: '/'===$route.path}"
       >
-        Main
+        Home
       </RouterLink>
 
       <RouterLink
-          to="/secondary"
-          :class="{ active: '/secondary'===$route.path }"
+          to="/about"
+          :class="{ active: '/about'===$route.path }"
       >
-        Secondary
+        About
+      </RouterLink>
+
+      <RouterLink
+          to="/todo"
+          :class="{ active: '/todo'===$route.path }"
+      >
+        Todo
+      </RouterLink>
+
+      <RouterLink
+          to="/switch"
+          :class="{ active: '/switch'===$route.path }"
+      >
+        Switch
       </RouterLink>
     </nav>
   </header>
 </template>
 
 <style scoped>
-/* {
-  border: 1px white solid;
-}*/
-
 .topbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: var(--secondary-background-color);
+  background: var(--background-color);
   margin: 0;
   padding: 0;
   width: 100vw;
-}
-
-nav {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  gap: 1rem;
+  box-shadow: 0 2px 4px 0 var(--blue);
 }
 
 nav a {
-  color: #f2f2f2;
+  color: var(--text-color);
+  font-weight: bold;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -53,13 +57,11 @@ nav a {
 }
 
 nav a.active {
-  background-color: var(--button-bg);
-  color: var(--text-color);
+  color: #218CFF;
 }
 
-nav a:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--button-hover-text);
+nav a:not(.active):hover {
+  background-color: rgba(33, 140, 255, 0.2);
 }
 </style>
 
@@ -68,15 +70,4 @@ import {computed, ref} from 'vue';
 import {useRoute} from "vue-router";
 
 const route = useRoute();
-
-const title = computed(() => {
-  switch (route.path) {
-    case '/':
-      return 'Home';
-    case '/secondary':
-      return 'Second Page';
-    default:
-      return 'My App';
-  }
-});
 </script>
