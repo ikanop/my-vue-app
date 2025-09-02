@@ -6,10 +6,7 @@ import MountedStatus from "../components/mountedStatus.vue";
 <template>
   <div class="container">
     <TodoList/>
-    <MountedStatus
-        style="
-        margin: 0 0 0 auto;"
-    />
+    <MountedStatus class="mounted-status"/>
   </div>
 </template>
 
@@ -17,5 +14,9 @@ import MountedStatus from "../components/mountedStatus.vue";
 .container {
   display: flex;
   gap: 3rem;
+}
+
+.mounted-status {
+  margin: 0 0 0 auto;
 }
 </style>

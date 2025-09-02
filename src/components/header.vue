@@ -1,5 +1,5 @@
 <template>
-  <header class="topbar">
+  <header>
     <img src="../assets/spinner.svg">
     <h1>{{ title }}</h1>
     <nav>
@@ -34,7 +34,10 @@
 </template>
 
 <style scoped>
-.topbar {
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,7 +69,6 @@ nav a:not(.active):hover {
 </style>
 
 <script setup>
-import {computed, ref} from 'vue';
 import {useRoute} from "vue-router";
 
 const route = useRoute();

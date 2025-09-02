@@ -1,9 +1,9 @@
 <script setup>
-import TopBar from './components/topBar.vue'
+import Header from "./components/header.vue";
 </script>
 
 <template>
-  <top-bar/>
+  <Header/>
   <main>
     <RouterView/>
   </main>

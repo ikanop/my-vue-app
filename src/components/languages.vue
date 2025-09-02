@@ -19,7 +19,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-for="(percent, lang) in percentages" :key="lang" class="language">
+  <h1>Languages used</h1>
+  <div v-for="(percent, lang) in percentages" :key="lang">
     <p>{{ lang }} - {{ percent }}%</p>
     <div class="bar">
       <div class="fill" :style="{ width: percent + '%' }"></div>
@@ -28,15 +29,12 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.language {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+h1 {
+  color: var(--blue);
 }
 
 .bar {
-  width: 30%;
+  width: 30vw;
   height: 10px;
   background: #eee;
   border-radius: 5px;
