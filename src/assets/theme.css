@@ -1,8 +1,6 @@
 :root {
     color-scheme: light dark;
 
-    --font-family: 'Helvetica Neue', Arial, sans-serif;
-
     --green: #4caf50;
     --red: #f44336;
     --blue: #218CFF;
@@ -17,7 +15,8 @@
 }
 
 body {
-    font-family: var(--font-family);
+    --font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 
     background-color: var(--background-color);
     color: var(--text-color);
