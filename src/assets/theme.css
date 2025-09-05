@@ -1,40 +1,40 @@
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
 
-    --green: #4caf50;
-    --red: #f44336;
-    --blue: #218CFF;
-    --light-blue: #80BDFF;
+  --green: #4caf50;
+  --red: #f44336;
+  --blue: #218CFF;
+  --light-blue: #80BDFF;
 
-    --background-color: #f5f5f5;
-    --secondary-background-color: #e0e0e0;
-    --text-color: #ebebeb;
+  --background-color: #f5f5f5;
+  --secondary-background-color: #e0e0e0;
+  --text-color: #ebebeb;
 
-    --scrollbar-bg: #e0e0e0;
-    --scrollbar-thumb: #a0a0a0;
+  --scrollbar-bg: #e0e0e0;
+  --scrollbar-thumb: #a0a0a0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 
-    background-color: var(--background-color);
-    color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-  /******************/
- /*** Dark theme ***/
+/******************/
+/*** Dark theme ***/
 /******************/
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #1e1e1e;
-        --secondary-background-color: #333;
-        --text-color: #ebebeba3;
-        --scrollbar-bg: #2e2e2e;
-        --scrollbar-thumb: #6a6a6a;
+  :root {
+    --background-color: #1e1e1e;
+    --secondary-background-color: #333;
+    --text-color: #ebebeba3;
+    --scrollbar-bg: #2e2e2e;
+    --scrollbar-thumb: #6a6a6a;
 
-        --button-bg: #04aa6d;
-        --button-hover-bg: #ddd;
-        --button-hover-text: #36454F;
+    --button-bg: #04aa6d;
+    --button-hover-bg: #ddd;
+    --button-hover-text: #36454F;
   }
 }
