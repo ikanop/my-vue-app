@@ -1,32 +1,19 @@
 <template>
   <header>
-    <img src="../assets/spinner.svg">
-    <h1>{{ title }}</h1>
     <nav>
-      <RouterLink to ="/"
-      :class="{ active: '/'===$route.path}"
-      >
+      <RouterLink to="/" :class="{ active: '/' === $route.path }">
         Home
       </RouterLink>
 
-      <RouterLink
-          to="/about"
-          :class="{ active: '/about'===$route.path }"
-      >
+      <RouterLink to="/about" :class="{ active: '/about' === $route.path }">
         About
       </RouterLink>
 
-      <RouterLink
-          to="/todo"
-          :class="{ active: '/todo'===$route.path }"
-      >
+      <RouterLink to="/todo" :class="{ active: '/todo' === $route.path }">
         Todo
       </RouterLink>
 
-      <RouterLink
-          to="/switch"
-          :class="{ active: '/switch'===$route.path }"
-      >
+      <RouterLink to="/switch" :class="{ active: '/switch' === $route.path }">
         Switch
       </RouterLink>
     </nav>
@@ -60,7 +47,7 @@ nav a {
 }
 
 nav a.active {
-  color: #218CFF;
+  color: #218cff;
 }
 
 nav a:not(.active):hover {
@@ -69,7 +56,7 @@ nav a:not(.active):hover {
 </style>
 
 <script setup>
-import {useRoute} from "vue-router";
+import { useRoute } from "vue-router";
 
 const route = useRoute();
 </script>

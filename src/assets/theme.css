@@ -15,11 +15,17 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto Mono", system-ui;
 
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: "Roboto Mono", system-ui;
 }
 
 /******************/
