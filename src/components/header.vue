@@ -30,7 +30,7 @@ header {
   align-items: center;
   background: var(--background-color);
   margin: 0;
-  padding: 0;
+  padding: 0.75rem 0 0.75rem 0;
   width: 100vw;
   box-shadow: 0 2px 4px 0 var(--blue);
 }
