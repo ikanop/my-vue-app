@@ -22,10 +22,15 @@ body {
 }
 
 button,
-input,
 select,
 textarea {
   font-family: "Roboto Mono", system-ui;
+  cursor: pointer;
+}
+
+input {
+  font-family: "Roboto Mono", system-ui;
+  cursor: text;
 }
 
 /******************/

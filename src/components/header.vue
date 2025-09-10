@@ -9,6 +9,13 @@
         About
       </RouterLink>
 
+      <RouterLink
+        to="/languages"
+        :class="{ active: '/languages' === $route.path }"
+      >
+        Languages
+      </RouterLink>
+
       <RouterLink to="/todo" :class="{ active: '/todo' === $route.path }">
         Todo
       </RouterLink>

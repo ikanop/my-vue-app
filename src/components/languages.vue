@@ -1,29 +1,33 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
-const percentages = ref({})
+const percentages = ref({});
 
 onMounted(async () => {
-  const response = await fetch('https://api.github.com/repos/ikanop/my-vue-app/languages')
-  const data = await response.json()
+  const response = await fetch(
+    "https://api.github.com/repos/ikanop/my-vue-app/languages",
+  );
+  const data = await response.json();
 
-  const total = Object.values(data).reduce((sum, bytes) => sum + bytes, 0)
-  const result = {}
+  const total = Object.values(data).reduce((sum, bytes) => sum + bytes, 0);
+  const result = {};
 
   for (const [lang, bytes] of Object.entries(data)) {
-    result[lang] = ((bytes / total) * 100).toFixed(1)
+    result[lang] = ((bytes / total) * 100).toFixed(1);
   }
 
-  percentages.value = result
-})
+  percentages.value = result;
+});
 </script>
 
 <template>
   <h1>Languages used</h1>
-  <div v-for="(percent, lang) in percentages" :key="lang">
-    <p>{{ lang }} - {{ percent }}%</p>
-    <div class="bar">
-      <div class="fill" :style="{ width: percent + '%' }"></div>
+  <div class="languages">
+    <div v-for="(percent, lang) in percentages" :key="lang">
+      <p>{{ lang }} - {{ percent }}%</p>
+      <div class="bar">
+        <div class="fill" :style="{ width: percent + '%' }"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +35,13 @@ onMounted(async () => {
 <style scoped>
 h1 {
   color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .bar {

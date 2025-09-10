@@ -1,10 +1,13 @@
-<script setup>
-import Languages from "../components/languages.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Languages />
+  <header>
+    <h1>Welcome!</h1>
+  </header>
 </template>
 
 <style scoped>
+h1 {
+  color: var(--blue);
+}
 </style>
