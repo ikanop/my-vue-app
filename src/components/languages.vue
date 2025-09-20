@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const percentages = ref({});
 
@@ -26,7 +26,7 @@ onMounted(async () => {
     <div v-for="(percent, lang) in percentages" :key="lang">
       <p>{{ lang }} - {{ percent }}%</p>
       <div class="bar">
-        <div class="fill" :style="{ width: percent + '%' }"></div>
+        <div :style="{ width: percent + '%' }" class="fill"></div>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@ h1 {
 .languages {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .bar {
