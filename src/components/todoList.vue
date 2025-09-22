@@ -1,16 +1,16 @@
 <script setup>
-import { ref, computed } from "vue";
+import {computed, ref} from "vue";
 
 let id = 0;
 
 const newTodo = ref("");
 const hideCompleted = ref(false);
 const todos = ref([
-  { id: id++, text: "Learn HTML", done: true },
-  { id: id++, text: "Learn CSS", done: true },
-  { id: id++, text: "Learn BASH", done: true },
-  { id: id++, text: "Learn JavaScript", done: false },
-  { id: id++, text: "Learn Vue", done: false },
+  {id: id++, text: "Learn HTML", done: true},
+  {id: id++, text: "Learn CSS", done: true},
+  {id: id++, text: "Learn BASH", done: true},
+  {id: id++, text: "Learn JavaScript", done: false},
+  {id: id++, text: "Learn Vue", done: false},
 ]);
 
 const filterTodos = computed(() => {
@@ -22,7 +22,7 @@ const filterTodos = computed(() => {
 });
 
 function addTodo() {
-  todos.value.push({ id: id++, text: newTodo.value, done: false });
+  todos.value.push({id: id++, text: newTodo.value, done: false});
   newTodo.value = "";
 }
 
@@ -32,18 +32,18 @@ function removeTodo(todo) {
 </script>
 
 <template>
-  <div class="todo-container">
+  <div>
     <form @submit.prevent="addTodo">
-      <input v-model="newTodo" required placeholder="new todo" maxlength="20" />
+      <input v-model="newTodo" maxlength="20" placeholder="new todo" required/>
       <button>Add Todo</button>
     </form>
-    <div class="todo-list-container">
+    <div>
       <p v-for="todo in filterTodos" :key="todo.id">
-        <input type="checkbox" v-model="todo.done" />
-        <span :class="{ done: todo.done }" class="todo-text">{{
-          todo.text
-        }}</span>
-        <button @click="removeTodo(todo)" class="remove-button">X</button>
+        <input v-model="todo.done" type="checkbox"/>
+        <span :class="{ done: todo.done }">{{
+            todo.text
+          }}</span>
+        <button @click="removeTodo(todo)">X</button>
       </p>
     </div>
     <button @click="hideCompleted = !hideCompleted">
@@ -53,44 +53,5 @@ function removeTodo(todo) {
 </template>
 
 <style>
-.todo-container {
-  display: flex;
-  flex-direction: column;
-}
 
-.todo-list-container {
-  display: flex;
-  flex-direction: column;
-  max-height: 200px;
-  width: fit-content;
-  overflow-y: auto;
-  gap: 1rem;
-}
-
-.todo-list-container::-webkit-scrollbar {
-  background: transparent;
-  width: 10px;
-}
-
-.todo-list-container::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: 10px;
-}
-
-.todo-text {
-  display: inline-block;
-  width: 200px;
-}
-
-.remove-button {
-  color: var(--text-color);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.done {
-  text-decoration: line-through;
-}
 </style>
