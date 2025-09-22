@@ -33,25 +33,115 @@ function removeTodo(todo) {
 
 <template>
   <div>
-    <form @submit.prevent="addTodo">
-      <input v-model="newTodo" maxlength="20" placeholder="new todo" required/>
-      <button>Add Todo</button>
+    <form class="todo-form" @submit.prevent="addTodo">
+      <input v-model="newTodo" class="todo-input" maxlength="20" placeholder="new todo" required/>
+      <button class="add-btn">Add Todo</button>
     </form>
-    <div>
-      <p v-for="todo in filterTodos" :key="todo.id">
-        <input v-model="todo.done" type="checkbox"/>
-        <span :class="{ done: todo.done }">{{
+    <div class="todo-list-container">
+      <p v-for="todo in filterTodos" :key="todo.id" class="todo-item">
+        <input v-model="todo.done" class="todo-checkbox" type="checkbox"/>
+        <span :class="{ 'todo-text': true, done: todo.done }">{{
             todo.text
           }}</span>
-        <button @click="removeTodo(todo)">X</button>
+        <button class="remove-btn" @click="removeTodo(todo)">X</button>
       </p>
     </div>
-    <button @click="hideCompleted = !hideCompleted">
+    <button class="toggle-btn" @click="hideCompleted = !hideCompleted">
       {{ hideCompleted ? "Show all" : "Hide completed" }}
     </button>
   </div>
 </template>
 
-<style>
+<style scoped>
+/* {
+  border: 1px solid white;
+}*/
 
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.add-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: var(--light-blue);
+}
+
+.todo-list-container {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 18px;
+}
+
+.todo-text.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.remove-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--red);
+  color: white;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: var(--dark-red);
+}
+
+.toggle-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: var(--light-blue);
+}
 </style>
