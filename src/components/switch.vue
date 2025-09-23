@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 const Switch = ref(false)
 
@@ -10,15 +10,15 @@ function toggle() {
 
 <template>
   <div class="switch-container">
-    <button @click="toggle" :class="Switch ? 'green' : 'red'"
-
-            style="
+    <button :class="Switch ? 'true' : 'false'" class="switch-btn" style="
             cursor: pointer;"
+
+            @click="toggle"
     >
-      {{Switch ? 'True' : 'False'}}
+      {{ Switch ? 'True' : 'False' }}
     </button>
-    <h3 :class="Switch ? 'green' : 'red'">
-      {{Switch ? 'Fish' : 'PufferFish'}}</h3>
+    <h3>
+      {{ Switch ? 'Fish' : 'PufferFish' }}</h3>
   </div>
 </template>
 
@@ -29,11 +29,29 @@ function toggle() {
   width: 100px;
 }
 
-.green {
-  color: var(--green);
+.switch-btn {
+  all: unset;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--blue);
 }
 
-.red {
-  color: var(--red);
+.true {
+  background-color: var(--green);
+}
+
+.true:hover {
+  background-color: var(--dark-green);
+}
+
+.false {
+  background-color: var(--red);
+}
+
+.false:hover {
+  background-color: var(--dark-red);
 }
 </style>

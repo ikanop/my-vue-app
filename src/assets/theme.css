@@ -2,6 +2,7 @@
   color-scheme: light dark;
 
   --green: #4caf50;
+  --dark-green: #2e7d32;
   --red: #f44336;
   --dark-red: #b71c1c;
   --blue: #218CFF;
@@ -11,9 +12,6 @@
   --secondary-background-color: #e0e0e0;
   --text-color: #ebebeb;
   --border-color: #ebebeb;
-
-  --scrollbar-bg: #e0e0e0;
-  --scrollbar-thumb: #a0a0a0;
 }
 
 body {
@@ -44,8 +42,6 @@ input {
     --secondary-background-color: #333;
     --text-color: #ebebeba3;
     --border-color: #333;
-    --scrollbar-bg: #2e2e2e;
-    --scrollbar-thumb: #6a6a6a;
 
     --button-bg: #04aa6d;
     --button-hover-bg: #ddd;

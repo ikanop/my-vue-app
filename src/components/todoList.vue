@@ -67,15 +67,19 @@ function removeTodo(todo) {
   flex: 1;
   padding: 10px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid var(--border-color);
+}
+
+.todo-input:focus {
+  outline: solid 1px var(--light-blue);
 }
 
 .add-btn {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--blue);
   color: white;
   cursor: pointer;
@@ -90,7 +94,7 @@ function removeTodo(todo) {
   overflow-y: auto;
   border: 1px solid var(--border-color);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .todo-item {
@@ -120,7 +124,7 @@ function removeTodo(todo) {
   padding: 5px 10px;
   font-size: 14px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--red);
   color: white;
   cursor: pointer;

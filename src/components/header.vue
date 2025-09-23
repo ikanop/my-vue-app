@@ -1,26 +1,26 @@
 <template>
   <header>
     <nav>
-      <RouterLink to="/" :class="{ active: '/' === $route.path }">
+      <RouterLink :class="{ active: '/' === $route.path }" to="/">
         Home
       </RouterLink>
 
-      <RouterLink to="/about" :class="{ active: '/about' === $route.path }">
+      <RouterLink :class="{ active: '/about' === $route.path }" to="/about">
         About
       </RouterLink>
 
       <RouterLink
-        to="/languages"
         :class="{ active: '/languages' === $route.path }"
+        to="/languages"
       >
         Languages
       </RouterLink>
 
-      <RouterLink to="/todo" :class="{ active: '/todo' === $route.path }">
+      <RouterLink :class="{ active: '/todo' === $route.path }" to="/todo">
         Todo
       </RouterLink>
 
-      <RouterLink to="/switch" :class="{ active: '/switch' === $route.path }">
+      <RouterLink :class="{ active: '/switch' === $route.path }" to="/switch">
         Switch
       </RouterLink>
     </nav>
@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a.active {
-  color: #218cff;
+  color: var(--blue);
 }
 
 nav a:not(.active):hover {
@@ -63,7 +63,7 @@ nav a:not(.active):hover {
 </style>
 
 <script setup>
-import { useRoute } from "vue-router";
+import {useRoute} from "vue-router";
 
 const route = useRoute();
 </script>
