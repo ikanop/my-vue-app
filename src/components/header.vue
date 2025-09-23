@@ -45,12 +45,11 @@ header {
 nav a {
   color: var(--text-color);
   font-weight: bold;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
   display: inline-block;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 nav a.active {

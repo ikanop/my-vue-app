@@ -75,16 +75,6 @@ function removeTodo(todo) {
   outline: solid 1px var(--light-blue);
 }
 
-.add-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--blue);
-  color: white;
-  cursor: pointer;
-}
-
 .add-btn:hover {
   background-color: var(--light-blue);
 }
@@ -121,13 +111,7 @@ function removeTodo(todo) {
 }
 
 .remove-btn {
-  padding: 5px 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
   background-color: var(--red);
-  color: white;
-  cursor: pointer;
 }
 
 .remove-btn:hover {
@@ -136,13 +120,6 @@ function removeTodo(todo) {
 
 .toggle-btn {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--blue);
-  color: white;
-  cursor: pointer;
 }
 
 .toggle-btn:hover {

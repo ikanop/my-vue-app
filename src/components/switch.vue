@@ -10,11 +10,7 @@ function toggle() {
 
 <template>
   <div class="switch-container">
-    <button :class="Switch ? 'true' : 'false'" class="switch-btn" style="
-            cursor: pointer;"
-
-            @click="toggle"
-    >
+    <button :class="Switch ? 'true' : 'false'" class="switch-btn" @click="toggle">
       {{ Switch ? 'True' : 'False' }}
     </button>
     <h3>
@@ -27,16 +23,6 @@ function toggle() {
   display: flex;
   flex-direction: column;
   width: 100px;
-}
-
-.switch-btn {
-  all: unset;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: var(--text-color);
-  background-color: var(--blue);
 }
 
 .true {

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
 const percentages = ref({});
 
@@ -36,12 +36,14 @@ onMounted(async () => {
 h1 {
   color: var(--blue);
   margin-bottom: 1rem;
+  transform: rotate(2deg);
 }
 
 .languages {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  font-weight: bold;
 }
 
 .bar {
@@ -51,6 +53,7 @@ h1 {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .fill {
   height: 100%;
   background: linear-gradient(to right, var(--blue), var(--light-blue));
