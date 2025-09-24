@@ -8,10 +8,19 @@
   --blue: #218CFF;
   --light-blue: #80BDFF;
 
-  --background-color: #f5f5f5;
-  --secondary-background-color: #e0e0e0;
-  --text-color: #ebebeb;
-  --border-color: #ebebeb;
+  --background-color: #1e1e1e;
+  --secondary-background-color: #333;
+  --text-color: #ebebeba3;
+  --border-color: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #f5f5f5;
+    --secondary-background-color: #e0e0e0;
+    --text-color: #ebebeb;
+    --border-color: #ebebeb;
+  }
 }
 
 body {
@@ -40,20 +49,4 @@ textarea {
 input {
   font-family: "Roboto Mono", system-ui;
   cursor: text;
-}
-
-/******************/
-/*** Dark theme ***/
-/******************/
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #1e1e1e;
-    --secondary-background-color: #333;
-    --text-color: #ebebeba3;
-    --border-color: #333;
-
-    --button-bg: #04aa6d;
-    --button-hover-bg: #ddd;
-    --button-hover-text: #36454F;
-  }
 }
