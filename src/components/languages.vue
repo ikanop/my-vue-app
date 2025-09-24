@@ -36,7 +36,6 @@ onMounted(async () => {
 h1 {
   color: var(--blue);
   margin-bottom: 1rem;
-  transform: rotate(2deg);
 }
 
 .languages {

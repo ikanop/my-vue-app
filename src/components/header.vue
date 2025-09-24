@@ -1,26 +1,23 @@
 <template>
   <header>
     <nav>
-      <RouterLink :class="{ active: '/' === $route.path }" to="/">
+      <RouterLink :class="{ active: '/' === $route.path }" class="nav-home" to="/">
         Home
       </RouterLink>
 
-      <RouterLink :class="{ active: '/about' === $route.path }" to="/about">
+      <RouterLink :class="{ active: '/about' === $route.path }" class="nav-about" to="/about">
         About
       </RouterLink>
 
-      <RouterLink
-        :class="{ active: '/languages' === $route.path }"
-        to="/languages"
-      >
+      <RouterLink :class="{ active: '/languages' === $route.path }" class="nav-languages" to="/languages">
         Languages
       </RouterLink>
 
-      <RouterLink :class="{ active: '/todo' === $route.path }" to="/todo">
+      <RouterLink :class="{ active: '/todo' === $route.path }" class="nav-todo" to="/todo">
         Todo
       </RouterLink>
 
-      <RouterLink :class="{ active: '/switch' === $route.path }" to="/switch">
+      <RouterLink :class="{ active: '/switch' === $route.path }" class="nav-switch" to="/switch">
         Switch
       </RouterLink>
     </nav>
@@ -58,6 +55,26 @@ nav a.active {
 
 nav a:not(.active):hover {
   background-color: rgba(33, 140, 255, 0.2);
+}
+
+.nav-home {
+  transform: rotate(2deg);
+}
+
+.nav-about {
+  transform: rotate(-2deg);
+}
+
+.nav-languages {
+  transform: rotate(2deg);
+}
+
+.nav-todo {
+  transform: rotate(-2deg);
+}
+
+.nav-switch {
+  transform: rotate(2deg);
 }
 </style>
 
