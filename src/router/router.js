@@ -1,10 +1,10 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import Home from "../pages/main.vue";
-import About from "../pages/about.vue";
-import Languages from "../pages/languages.vue";
-import Todo from "../pages/todo.vue";
-import Switch from "../pages/switch.vue";
+import Home from "../views/main.vue";
+import About from "../views/about.vue";
+import Languages from "../views/languages.vue";
+import Todo from "../views/todo.vue";
+import Switch from "../views/switch.vue";
 
 const routes = [
   {path: "/", component: Home},
