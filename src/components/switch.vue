@@ -25,6 +25,10 @@ function toggle() {
   width: 100px;
 }
 
+.switch-btn {
+  color: var(--text-color);
+}
+
 .true {
   background-color: var(--green);
 }

@@ -34,7 +34,7 @@ onMounted(async () => {
 
 <style scoped>
 h1 {
-  color: var(--blue);
+  color: var(--pastel-pink);
   margin-bottom: 1rem;
 }
 
@@ -55,6 +55,6 @@ h1 {
 
 .fill {
   height: 100%;
-  background: linear-gradient(to right, var(--blue), var(--light-blue));
+  background: linear-gradient(to right, var(--pastel-pink-2), var(--pastel-pink));
 }
 </style>

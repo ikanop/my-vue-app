@@ -3,10 +3,15 @@
 
   --green: #4caf50;
   --dark-green: #2e7d32;
-  --red: #f44336;
-  --dark-red: #b71c1c;
+  --red: #e57373;
+  --dark-red: #b84d4d;
   --blue: #218CFF;
-  --light-blue: #80BDFF;
+  --baby-blue: #89cff0;
+  --pastel-pink: #facef5;
+  --pastel-pink-2: #e2a6b7;
+  --pastel-pink-3: #d68fa7;
+
+  --pastel-green: #5fecaf;
 
   --background-color: #1e1e1e;
   --secondary-background-color: #333;
@@ -35,8 +40,12 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: var(--blue);
+  background-color: var(--pastel-pink-3);
   color: var(--text-color);
+}
+
+button:hover {
+  background-color: var(--pastel-pink-2);
 }
 
 button,
@@ -49,4 +58,6 @@ textarea {
 input {
   font-family: "Roboto Mono", system-ui;
   cursor: text;
+  accent-color: var(--red);
+  caret-color: var(--pastel-pink);
 }

@@ -72,11 +72,7 @@ function removeTodo(todo) {
 }
 
 .todo-input:focus {
-  outline: solid 1px var(--light-blue);
-}
-
-.add-btn:hover {
-  background-color: var(--light-blue);
+  outline: solid 1px var(--pastel-pink);
 }
 
 .todo-list-container {
@@ -120,9 +116,5 @@ function removeTodo(todo) {
 
 .toggle-btn {
   margin-top: 20px;
-}
-
-.toggle-btn:hover {
-  background-color: var(--light-blue);
 }
 </style>

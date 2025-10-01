@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="container">
@@ -21,6 +21,6 @@
 }
 
 h1 {
-  color: var(--blue);
+  color: var(--pastel-pink);
 }
 </style>
