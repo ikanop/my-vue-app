@@ -1,17 +1,28 @@
 <script setup>
-import {computed, ref} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 
 let id = 0;
 
 const newTodo = ref("");
 const hideCompleted = ref(false);
-const todos = ref([
-  {id: id++, text: "Learn HTML", done: true},
-  {id: id++, text: "Learn CSS", done: true},
-  {id: id++, text: "Learn BASH", done: true},
-  {id: id++, text: "Learn JavaScript", done: false},
-  {id: id++, text: "Learn Vue", done: false},
-]);
+const todos = ref([]);
+
+onMounted(() => {
+  const savedTodos = localStorage.getItem("todos");
+  if (savedTodos) {
+    todos.value = JSON.parse(savedTodos);
+    id = todos.value.length
+      ? Math.max(...todos.value.map((t) => t.id)) + 1 : 0;
+  }
+});
+
+watch(
+  todos,
+  (newTodos) => {
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+  },
+  {deep: true}
+);
 
 const filterTodos = computed(() => {
   if (hideCompleted.value) {
